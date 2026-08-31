@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhalla Ram Dhatarwal | Mobile App Portfolio</title>
+<style>
+/* ===== Mobile Developer Portfolio - Blogger Ready ===== */
+#mobilePortfolio{font-family:Arial,Helvetica,sans-serif;max-width:1180px;margin:0 auto;color:#172033;background:#f7f9fc;line-height:1.6}
+#mobilePortfolio *{box-sizing:border-box}
+#mobilePortfolio .hero{background:linear-gradient(135deg,#102a43,#1f6feb);color:#fff;border-radius:22px;padding:42px 28px;margin:10px 0 26px;text-align:center}
+#mobilePortfolio .hero h1{font-size:38px;margin:0 0 8px;font-weight:800}
+#mobilePortfolio .hero p{margin:7px auto;max-width:800px;font-size:17px;opacity:.95}
+#mobilePortfolio .stats{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:24px}
+#mobilePortfolio .stat{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:10px 18px}
+#mobilePortfolio .intro{background:#fff;border:1px solid #e4e9f0;border-radius:18px;padding:24px;margin-bottom:24px}
+#mobilePortfolio .intro h2{margin:0 0 8px;font-size:24px}
+#mobilePortfolio .filters{position:sticky;top:8px;z-index:20;background:rgba(247,249,252,.96);backdrop-filter:blur(8px);padding:10px 0 16px;margin-bottom:8px}
+#mobilePortfolio .filters input{display:none}
+#mobilePortfolio .filters label{display:inline-block;margin:4px;padding:10px 16px;border:1px solid #d5dce5;border-radius:999px;background:#fff;color:#26364a;font-weight:700;cursor:pointer}
+#mobilePortfolio .filters label:hover{border-color:#1f6feb}
+#mobilePortfolio #filter-all:checked ~ .filters label[for="filter-all"],
+#mobilePortfolio #filter-android:checked ~ .filters label[for="filter-android"],
+#mobilePortfolio #filter-flutter:checked ~ .filters label[for="filter-flutter"],
+#mobilePortfolio #filter-rn:checked ~ .filters label[for="filter-rn"]{background:#1f6feb;color:#fff;border-color:#1f6feb}
+#mobilePortfolio .project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+#mobilePortfolio .card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:20px;box-shadow:0 5px 18px rgba(20,40,70,.05);transition:transform .2s ease,box-shadow .2s ease}
+#mobilePortfolio .card:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(20,40,70,.1)}
+#mobilePortfolio .card .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+#mobilePortfolio .card h3{margin:0;font-size:20px;line-height:1.25}
+#mobilePortfolio .badge{font-size:11px;font-weight:800;padding:5px 9px;border-radius:999px;white-space:nowrap}
+#mobilePortfolio .live{background:#e9f9ef;color:#16733b}
+#mobilePortfolio .removed{background:#fff0f0;color:#a62a2a}
+#mobilePortfolio .partial{background:#fff6df;color:#8a5a00}
+#mobilePortfolio .tech{display:inline-block;margin:10px 0 8px;padding:5px 9px;background:#eef4ff;color:#1956a6;border-radius:7px;font-size:12px;font-weight:800}
+#mobilePortfolio .card p{font-size:14px;color:#526173;margin:8px 0 13px}
+#mobilePortfolio .role{font-size:13px;color:#26364a;margin-bottom:12px}
+#mobilePortfolio .actions{display:flex;flex-wrap:wrap;gap:8px}
+#mobilePortfolio .btn{display:inline-block;padding:8px 11px;border-radius:8px;text-decoration:none;font-size:12px;font-weight:800;border:1px solid #d9e1eb}
+#mobilePortfolio .btn.primary{background:#1f6feb;color:#fff;border-color:#1f6feb}
+#mobilePortfolio .btn.muted{background:#f5f6f8;color:#777;cursor:default}
+#mobilePortfolio .section-title{margin:34px 0 14px}
+#mobilePortfolio .section-title h2{font-size:28px;margin:0 0 4px}
+#mobilePortfolio .section-title p{margin:0;color:#607086}
+#mobilePortfolio .note{background:#fff8e8;border:1px solid #f1d795;border-radius:14px;padding:14px 16px;margin:18px 0;color:#6f5616;font-size:13px}
+#mobilePortfolio .footer{margin-top:34px;background:#102a43;color:#fff;border-radius:18px;padding:28px;text-align:center}
+#mobilePortfolio .footer a{color:#fff}
+@media(max-width:900px){#mobilePortfolio .project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){#mobilePortfolio .hero h1{font-size:30px}#mobilePortfolio .project-grid{grid-template-columns:1fr}#mobilePortfolio .filters{position:static}}
+/* CSS-only technology filtering */
+#mobilePortfolio #filter-android:checked ~ .project-grid .card:not(.android){display:none}
+#mobilePortfolio #filter-flutter:checked ~ .project-grid .card:not(.flutter){display:none}
+#mobilePortfolio #filter-rn:checked ~ .project-grid .card:not(.rn){display:none}
+</style>
+</head>
+<body>
+<div id="mobilePortfolio">
+
+  <section class="hero">
+    <h1>Mobile Application Portfolio</h1>
+    <p><strong>Bhalla Ram Dhatarwal</strong> — Senior Mobile Application Developer</p>
+    <p>Android Native (Kotlin / Java) · Flutter · React Native</p>
+    <div class="stats">
+      <div class="stat"><strong>16+</strong><br>Mobile Projects</div>
+      <div class="stat"><strong>3</strong><br>Technology Areas</div>
+      <div class="stat"><strong>Android · iOS</strong><br>Cross-platform Delivery</div>
+    </div>
+  </section>
+
+  <section class="intro">
+    <h2>About This Portfolio</h2>
+    <p>This portfolio showcases mobile applications developed across Android Native, Flutter and React Native. It includes currently published applications as well as earlier projects that are no longer available on the public app stores.</p>
+    <p><strong>My focus:</strong> mobile application architecture, UI development, API integration, third-party integrations, performance, testing, debugging and production delivery.</p>
+    <div class="note"><strong>Availability note:</strong> Store links are included only where a public listing was found. For unavailable applications, the store URL is intentionally left blank and the card clearly states that the app is no longer available.</div>
+  </section>
+
+  <!-- Filter controls. Keep the four inputs and labels together. -->
+  <input type="radio" name="technology" id="filter-all" checked>
+  <input type="radio" name="technology" id="filter-android">
+  <input type="radio" name="technology" id="filter-flutter">
+  <input type="radio" name="technology" id="filter-rn">
+
+  <div class="filters">
+    <strong>Filter by Technology:</strong><br>
+    <label for="filter-all">All Projects</label>
+    <label for="filter-android">Android Native — Kotlin / Java</label>
+    <label for="filter-flutter">Flutter</label>
+    <label for="filter-rn">React Native</label>
+  </div>
+
+  <div class="section-title">
+    <h2>Projects</h2>
+    <p>Use the filters above to view projects by technology.</p>
+  </div>
+
+  <div class="project-grid">
+
+    <!-- ANDROID NATIVE -->
+    <article class="card android">
+      <div class="top"><h3>Measurz</h3><span class="badge live">Google Play</span></div>
+      <span class="tech">Android Native · Kotlin / Java</span>
+      <p>A professional movement and client-assessment platform that digitises assessments, keeps client assessment information on mobile, and provides tools to make the assessment process faster and more engaging.</p>
+      <div class="role"><strong>Role:</strong> Android Native Developer</div>
+      <div class="actions">
+        <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.matassessment.app&hl=en_IN" target="_blank" rel="noopener">Google Play</a>
+      </div>
+    </article>
+
+    <article class="card android">
+      <div class="top"><h3>Car Market</h3><span class="badge live">Google Play</span></div>
+      <span class="tech">Android Native · Kotlin / Java</span>
+      <p>A smart car buying and selling marketplace with advanced search and filters, saved vehicles, vehicle comparison, buyer/seller communication, social sharing and car posting tools.</p>
+      <div class="role"><strong>Role:</strong> Android Native Developer</div>
+      <div class="actions">
+        <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.carmarketplace.app&hl=en_IN" target="_blank" rel="noopener">Google Play</a>
+      </div>
+    </article>
+
+    <article class="card android">
+      <div class="top"><h3>Asian Media Group — Mobile Applications</h3><span class="badge removed">Apps unavailable</span></div>
+      <span class="tech">Android Native · Kotlin / Java</span>
+      <p>Mobile applications supporting a portfolio of specialist media brands covering pharmacy, hospitality, retail, community and UK Asian news content. The associated publications remain available on the web.</p>
+      <div class="role"><strong>Role:</strong> Android Native Developer</div>
+      <div class="actions">
+        <a class="btn primary" href="https://www.pharmacy.biz/" target="_blank" rel="noopener">Pharmacy Business</a>
+        <a class="btn primary" href="https://www.asianhospitality.com/" target="_blank" rel="noopener">Asian Hospitality</a>
+        <a class="btn primary" href="https://www.asiantrader.biz/" target="_blank" rel="noopener">Asian Trader</a>
+        <a class="btn primary" href="https://www.easterneye.biz/" target="_blank" rel="noopener">Eastern Eye</a>
+        <span class="btn muted">Mobile apps removed from stores</span>
+      </div>
+    </article>
+
+    <article class="card android">
+      <div class="top"><h3>GST Calculator</h3><span class="badge removed">Unavailable</span></div>
+      <span class="tech">Android Native · Kotlin / Java</span>
+      <p>A utility application focused on GST calculations. The original application is no longer available on the public app stores.</p>
+      <div class="role"><strong>Role:</strong> Android Native Developer</div>
+      <div class="actions"><span class="btn muted">Removed from Google Play Store and App Store</span></div>
+    </article>
+
+    <!-- FLUTTER -->
+    <article class="card flutter">
+      <div class="top"><h3>Tool N Training (TNT)</h3><span class="badge removed">Unavailable</span></div>
+      <span class="tech">Flutter</span>
+      <p>A Flutter mobile application developed for Tool N Training. I owned the complete product implementation, including application design and end-to-end development.</p>
+      <div class="role"><strong>Role:</strong> Sole Developer — UI/UX Design & End-to-End Flutter Development</div>
+      <div class="actions"><span class="btn muted">Removed from Google Play Store</span></div>
+    </article>
+
+    <article class="card flutter">
+      <div class="top"><h3>MindRazr</h3><span class="badge live">Google Play</span></div>
+      <span class="tech">Flutter</span>
+      <p>A total wellbeing platform supporting mental fitness, stress management, healthier habits, activity, relaxation and sleep through guided exercises, workouts, soundscapes, sleep stories and playlists.</p>
+      <div class="role"><strong>Role:</strong> Flutter Developer</div>
+      <div class="actions">
+        <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.mindrazr" target="_blank" rel="noopener">Google Play</a>
+      </div>
+    </article>
+
+    <article class="card flutter">
+      <div class="top"><h3>Monkware User</h3><span class="badge removed">Unavailable</span></div>
+      <span class="tech">Flutter</span>
+      <p>User-facing mobile application developed as part of the Monkware application ecosystem.</p>
+      <div class="role"><strong>Role:</strong> Flutter Developer</div>
+      <div class="actions"><span class="btn muted">Removed from Google Play Store</span></div>
+    </article>
+
+    <article class="card flutter">
+      <div class="top"><h3>Monkware Security Guard</h3><span class="badge removed">Unavailable</span></div>
+      <span class="tech">Flutter</span>
+      <p>Role-specific mobile application developed for security-guard operations within the Monkware application ecosystem.</p>
+      <div class="role"><strong>Role:</strong> Flutter Developer</div>
+      <div class="actions"><span class="btn muted">Removed from Google Play Store</span></div>
+    </article>
+
+    <article class="card flutter">
+      <div class="top"><h3>Monkware Admin</h3><span class="badge removed">Unavailable</span></div>
+      <span class="tech">Flutter</span>
+      <p>Administrative mobile application developed as part of the Monkware multi-role application ecosystem.</p>
+      <div class="role"><strong>Role:</strong> Flutter Developer</div>
+      <div class="actions"><span class="btn muted">Removed from Google Play Store</span></div>
+    </article>
+
+    <article class="card flutter">
+      <div class="top"><h3>Monkware Serviceman</h3><span class="badge removed">Unavailable</span></div>
+      <span class="tech">Flutter</span>
+      <p>Service-provider/serviceman mobile application developed as part of the Monkware multi-role application ecosystem.</p>
+      <div class="role"><strong>Role:</strong> Flutter Developer</div>
+      <div class="actions"><span class="btn muted">Removed from Google Play Store</span></div>
+    </article>
+
+    <article class="card flutter">
+      <div class="top"><h3>PropertyLink+</h3><span class="badge live">Google Play</span></div>
+      <span class="tech">Flutter</span>
+      <p>A property-focused platform connecting developers, contractors, architects and clients, with communication, project updates and notifications. It also supports property services, providers and property sales, rent and leasing.</p>
+      <div class="role"><strong>Role:</strong> Flutter Developer</div>
+      <div class="actions">
+        <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.property_link_plus.app" target="_blank" rel="noopener">Google Play</a>
+        <a class="btn" href="https://www.propertylinkplus.com.au/" target="_blank" rel="noopener">Website</a>
+      </div>
+    </article>
+
+    <article class="card flutter">
+      <div class="top"><h3>Suitably</h3><span class="badge live">App Store</span></div>
+      <span class="tech">Flutter</span>
+      <p>A custom-tailored clothing shopping experience with styling guidance and a measurement workflow using height, weight, age and two photos, supported by AI and 3D mesh technology.</p>
+      <div class="role"><strong>Role:</strong> Flutter Developer</div>
+      <div class="actions">
+        <a class="btn primary" href="https://apps.apple.com/au/app/suitably/id1530384472" target="_blank" rel="noopener">App Store</a>
+      </div>
+    </article>
+
+    <!-- REACT NATIVE -->
+    <article class="card rn">
+      <div class="top"><h3>Omni-Link Logistics</h3><span class="badge partial">Store status differs</span></div>
+      <span class="tech">React Native</span>
+      <p>A logistics and transport application for booking and tracking freight, with customer and driver workflows, GPS/map functionality and delivery updates.</p>
+      <div class="role"><strong>Role:</strong> React Native Developer</div>
+      <div class="actions">
+        <a class="btn primary" href="https://apps.apple.com/no/app/omni-link/id6499137204" target="_blank" rel="noopener">App Store</a>
+        <span class="btn muted">Google Play: removed</span>
+      </div>
+    </article>
+
+    <article class="card rn">
+      <div class="top"><h3>Surplus-Gy Marketplace</h3><span class="badge live">Google Play</span></div>
+      <span class="tech">React Native</span>
+      <p>A multi-vendor marketplace offering products and services from multiple vendors, with integrated delivery and a community-focused shopping experience across Guyana and the Caribbean.</p>
+      <div class="role"><strong>Role:</strong> React Native Developer</div>
+      <div class="actions">
+        <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.SurplusGY.shop&hl=en_IN" target="_blank" rel="noopener">Google Play</a>
+      </div>
+    </article>
+
+    <article class="card rn">
+      <div class="top"><h3>Surplus-Gy Driver</h3><span class="badge live">Google Play</span></div>
+      <span class="tech">React Native</span>
+      <p>A driver application integrated with the Surplus-Gy marketplace, connecting registered drivers with delivery requests and supporting order assignment and delivery operations.</p>
+      <div class="role"><strong>Role:</strong> React Native Developer</div>
+      <div class="actions">
+        <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.surplusgyDriver&hl=en_IN" target="_blank" rel="noopener">Google Play</a>
+      </div>
+    </article>
+
+    <article class="card rn">
+      <div class="top"><h3>TakeAway Coffee</h3><span class="badge removed">Unavailable</span></div>
+      <span class="tech">React Native</span>
+      <p>A takeaway coffee mobile application developed for digital ordering and customer engagement. The original application is no longer available on the public app stores.</p>
+      <div class="role"><strong>Role:</strong> React Native Developer</div>
+      <div class="actions"><span class="btn muted">Removed from Google Play Store and App Store</span></div>
+    </article>
+
+  </div>
+
+  <section class="footer">
+    <h2>Interested in my work?</h2>
+    <p>For detailed professional experience, technical skills and career history, please refer to my resume or connect with me on LinkedIn.</p>
+    <p><strong>Mobile Development:</strong> Android Native · Flutter · React Native</p>
+  </section>
+
+</div>
+</body>
+</html>
